@@ -1,0 +1,9 @@
+## Command to run tests
+```
+mvn --f pom.xml clean verify -Dtest=BrowserStackExampleST.java
+```
+
+## Parameters to pass
+.  Dtest = test to run
+..  BrowserStackExampleST.java
+
