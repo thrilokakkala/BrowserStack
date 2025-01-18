@@ -85,13 +85,13 @@ public class BrowserStackExample {
             for (int i = 0; i < count; i++) {
                 Element article = articles.get(i);
                 String title = article.select("h2").text();
-                String content = article.select("p").text(); // You may need to refine this for full content
+                String content = article.select("p").text();
                 System.out.println("Title: " + title);
                 System.out.println("Content: " + content);
                 System.out.println();
                 scrapetext.put("title" + (i + 1), title);
                 // Download and save the cover image if available
-                String imgUrl = article.select("img").attr("src"); // Extract image URL
+                String imgUrl = article.select("img").attr("src");
                 if (!imgUrl.isEmpty()) {
                     System.out.println("Downloading image from: " + imgUrl);
                     downloadImage(imgUrl, "image_" + (i + 1) + ".jpg");
@@ -141,7 +141,7 @@ public class BrowserStackExample {
     }
 
     private static String parseTranslatedText(String jsonResponse) {
-        int startIdx = jsonResponse.indexOf("\"translatedText\":") + 18;
+        int startIdx = jsonResponse.indexOf("\"translatedText\":") + 12;
         int endIdx = jsonResponse.indexOf("\"", startIdx);
         return jsonResponse.substring(startIdx, endIdx);
     }
